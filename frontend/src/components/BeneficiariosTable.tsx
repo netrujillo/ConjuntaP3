@@ -29,7 +29,6 @@ const BeneficiariosTable: React.FC = () => {
         <Column field="id" header="ID" />
         <Column field="nombre" header="Nombre" />
         <Column field="contacto" header="Contacto" />
-        <Column field="ubicacion" header="Ubicación" />
       </DataTable>
     </div>
   );
