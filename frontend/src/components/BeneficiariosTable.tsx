@@ -21,6 +21,14 @@ const BeneficiariosTable: React.FC = () => {
     cargarBeneficiarios();
   }, []);
 
+  // 📌 Función para mostrar las donaciones de un beneficiario
+  const donacionesTemplate = (rowData: Beneficiario) => {
+    if (!rowData.donaciones || rowData.donaciones.length === 0) {
+      return "Sin donaciones";
+    }
+    return rowData.donaciones.map((d) => `ID: ${d.id}, ${d.tipoAlimento}`).join(" | ");
+  };
+
   return (
     <div>
       <h2>BENEFICIARIOS</h2>
@@ -29,9 +37,11 @@ const BeneficiariosTable: React.FC = () => {
         <Column field="id" header="ID" />
         <Column field="nombre" header="Nombre" />
         <Column field="contacto" header="Contacto" />
+        <Column header="Donaciones" body={donacionesTemplate} />
       </DataTable>
     </div>
   );
 };
 
 export default BeneficiariosTable;
+

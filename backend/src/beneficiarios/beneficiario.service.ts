@@ -11,6 +11,8 @@ export class BeneficiarioService {
   ) {}
 
   async listarBeneficiarios(): Promise<Beneficiario[]> {
-    return this.beneficiarioRepository.find();
+    return this.beneficiarioRepository.find({
+      relations: ['donaciones'],
+    });
   }
 }

@@ -2,14 +2,13 @@ export interface Donante {
     id: number;
     nombre: string;
     contacto: string;
-    ubicacion: string;
   }
   
   export interface Beneficiario {
     id: number;
     nombre: string;
     contacto: string;
-    ubicacion: string;
+    donaciones: Donacion[];
   }
   
   export interface Donacion {

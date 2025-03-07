@@ -15,4 +15,11 @@ export class DonacionController {
     return this.donacionService.obtenerDonacion(id);
   }
 
+  @Post(':id/beneficiarios')
+  async asignarBeneficiarios(
+    @Param('id') id: number, 
+    @Body() { beneficiarios }: { beneficiarios: number[] }
+  ) {
+    return this.donacionService.asignarBeneficiarios(id, beneficiarios);
+  }
 }
